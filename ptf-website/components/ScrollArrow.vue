@@ -24,13 +24,12 @@ export default {
 .container__scrollArrow a {
   position: absolute;
   bottom:  0%;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
   padding-left: 50px;
   padding-right: 50px;
   transform: translateX(-50%);
   margin: auto;
 
-  background-color: #708068;
   opacity: .6;
 
   z-index: 1;
@@ -40,10 +39,10 @@ export default {
   display: block;
   width: 24px;
   height: 24px;
-  border-left: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  -webkit-animation: scrolling 1.5s infinite;
-  animation: scrolling 1.5s infinite;
+  border-left: 5px solid #A5A988;
+  border-bottom: 5px solid #A5A988;
+  -webkit-animation: scrolling 2s infinite;
+  animation: scrolling 2s infinite;
   box-sizing: border-box;
 }
 @-webkit-keyframes scrolling {

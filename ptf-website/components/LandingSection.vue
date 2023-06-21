@@ -1,34 +1,117 @@
 <template>
   <section id="section__landingSection">
     <div class="container__landingSection">
-      <div class="text__landingSection-header">
-        <h1>Pens to Friends</h1>
+      <div class="headers">
+        <h1>pens to friends</h1>
+        <h1 id="headerOutline">pens to friends</h1>
       </div>
 
-      <div class="text__landingSection-subheader">
-        <h2>Spreading smiles, one letter at a time</h2>
+      <div class="container">
+        <div class="line"></div>
+        <div class="spreadingSmiles">
+          <h2>Spreading smiles, one letter at a time</h2>
+          <img src="/paper-aeroplane.svg" alt="">
+        </div>
       </div>
 
-      <div class="text__landingSection-content">
-        <h3>still developing this part</h3>
-      </div>
-
-        
+      <div class="background_rectangle"></div>
+      <img id="landingPageLogo" src="landing-page-logo.svg" alt="" width="650">
+      <img id="backgroundCircle" src="/background-circle.svg" alt="">
     </div>
   </section>
 </template>
 
-<script>
-import ScrollArrow from '../components/ScrollArrow.vue'
-
-export default {
-  components: {
-    ScrollArrow
-  }
-}
-</script>
-
 <style scoped>
+.headers {
+  position: absolute;
+  left: 260px;
+  top: 100px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 138px;
+  top: 620px;
+}
+
+.spreadingSmiles {
+  display: flex;
+  flex-direction: row;
+  z-index: 3;
+}
+
+.line {
+  position: absolute;
+  width: 434px;
+  height: 0px;
+  border: 5px solid #C8C8A9;
+}
+
+#headerOutline {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 128px;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #A5A988;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 128px;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #A5A988;
+  z-index: 2;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-sserif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 115px;
+  color: #35312B;
+  width: 611px;
+  height: 200px;
+}
+
+#backgroundCircle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#landingPageLogo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.background_rectangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #C8C8A9;
+  opacity: 40%;
+  z-index: -1;
+  border: 1rem solid white;
+}
+
 .container__landingSection {
   display: flex;
   flex-direction: column;
@@ -37,8 +120,6 @@ export default {
 
   width: 100vw;
   height: 100vh;
-
-  background: linear-gradient(135deg, #92a48b, var(--mossGreen));
 }
 
 .text__landingSection-header {
@@ -67,9 +148,11 @@ export default {
   .text__landingSection-header {
     font-size: 30px;
   }
+
   .text__landingSection-subheader {
     font-size: 20px;
   }
+
   .text__landingSection-content {
     font-size: 14px;
   }
