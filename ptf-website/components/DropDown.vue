@@ -1,8 +1,8 @@
 <template>
   <div class="faq-item">
-    <div class="faq-question" @click="toggleAnswer(); console.log(question, answer, isVisible)">
+    <div class="faq-question" @click="toggleAnswer">
       <h3>{{ question }}</h3>
-      <span class="faq-toggle">{{ isVisible }}</span>
+      <span class="faq-toggle">{{ isVisible ? '-' : '+' }}</span>
     </div>
     <div class="faq-answer" v-show="isVisible">
       {{ answer }}
@@ -24,12 +24,13 @@ defineProps({
     required: true
   },
 })
+
 function toggleAnswer() {
-  isVisible = !isVisible
+  isVisible.value = !isVisible.value
 }
 </script>
 
-<style>
+<style scoped>
 .faq-question {
   display: flex;
   cursor: pointer;
@@ -45,6 +46,10 @@ function toggleAnswer() {
 .faq-question {
   max-width: 75rem;
   padding: 0.5rem;
+  color: #35312B;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
 }
 
 .faq-toggle {

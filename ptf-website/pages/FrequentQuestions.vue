@@ -1,15 +1,14 @@
 <template>
-  <h1>QUESTIONS?</h1>
-  <div class="description">
-    <p>
+  <h1 class="faq__title">Questions?</h1>
+  <div class="faq__description">
+    <p class="faq__description-text">
       Here are a few of our most commonly asked; if the answer you're looking for is still not here,
       feel free to contact us.
     </p>
   </div>
   <div class="faq-list">
     <div class="faq-item" v-for="(FAQ, index) in FAQs" :key="index">
-      <DropDown :question="FAQ.question" :answer="FAQ.answer">
-      </DropDown>
+      <DropDown :question="FAQ.question" :answer="FAQ.answer"></DropDown>
     </div>
   </div>
 </template>
@@ -20,13 +19,27 @@ import { FAQs } from '../assets/FAQs.js'
 </script>
 
 <style scoped>
-h1 {
-  margin-top: 6rem;
-  margin-bottom: 0;
+.faq__title {
+  color: #35312B;
+  font-size: 3rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.faq__description {
+  color: #35312B;
+  font-size: 1.25rem;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
   text-align: center;
 }
 
-p {
+
+.faq__description-text {
   text-indent: 0;
   text-align: center;
 }
@@ -39,10 +52,5 @@ p {
 .faq-item {
   margin-bottom: 20px;
   width: 100%;
-}
-
-.description {
-  display: flex;
-  justify-content: center;
 }
 </style>

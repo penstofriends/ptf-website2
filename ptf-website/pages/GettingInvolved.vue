@@ -91,7 +91,6 @@ button {
   font-size: 3rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  line-height: 100%;
   text-align: center;
   margin-top: 3rem;
 }
