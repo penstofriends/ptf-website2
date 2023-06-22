@@ -1,55 +1,136 @@
 <template>
-  <section id="section__landingSection">
-    <div class="container__landingSection">
-      <div class="headers">
-        <h1>pens to friends</h1>
-        <h1 id="headerOutline">pens to friends</h1>
-      </div>
+  <section class="landing-section">
+    <div class="landing-section__background">
+      <img src="/background-circle.svg" class="landing-section__background-circle" width="650" />
+      <div class="landing-section__background-rectangle"></div>
+    </div>
+    <img src="/landing-page-logo.svg" class="landing-section__logo" width="650" />
 
-      <div class="container">
-        <div class="line"></div>
-        <div class="spreadingSmiles">
-          <h2>Spreading smiles, one letter at a time</h2>
-          <img src="/paper-aeroplane.svg" alt="">
-        </div>
-      </div>
+    <div class="landing-section__headers">
+      <h1 class="landing-section__title">pens to friends</h1>
+      <h1 class="landing-section__title landing-section__title--outline">pens to friends</h1>
+    </div>
 
-      <div class="background_rectangle"></div>
-      <img id="landingPageLogo" src="landing-page-logo.svg" alt="" width="650">
-      <img id="backgroundCircle" src="/background-circle.svg" alt="">
+    <button class="landing-section__button">
+      <span>Get Started</span>
+      <img src="/arrow.svg" alt="">
+    </button>
+
+    <div class="landing-section__bottom-left">
+      <div class="landing-section__line"></div>
+      <div class="landing-section__smiles">
+        <h2 class="landing-section__subtitle">Spreading smiles, one letter at a time</h2>
+        <img width="146" src="/paper-aeroplane.svg" />
+      </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-.headers {
+
+.landing-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.landing-section__bottom-left {
+  position: absolute;
+  top: 650px;
+  left: 50px;
+}
+
+.landing-section__logo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.landing-section__background-rectangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #C8C8A9;
+  opacity: 40%;
+  z-index: -1;
+  border: 1rem solid white;
+}
+
+.landing-section__button {
+  cursor: pointer;
+  transition: all .2s;
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #35312B;
+  border: 1px solid #A5A988;
+  border-radius: 50%;
+  padding: 1rem 2.5rem;
+  height: 4rem;
+  box-shadow: 5px 5px 0 0 #A5A988;
+  z-index: 4;
+}
+
+.landing-section__button > img {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform .3s ease-in-out;
+}
+
+.landing-section__button:hover img {
+  transform: translateX(5px);
+}
+
+.landing-section__button:active {
+  transform: scale(0.95);
+}
+
+.landing-section__headers {
   position: absolute;
   left: 260px;
   top: 100px;
 }
 
-.container {
+.landing-section__bottom-left {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  left: 138px;
-  top: 620px;
 }
 
-.spreadingSmiles {
+.landing-section__smiles {
   display: flex;
   flex-direction: row;
   z-index: 3;
 }
 
-.line {
+.landing-section__line {
   position: absolute;
   width: 434px;
   height: 0px;
   border: 5px solid #C8C8A9;
 }
 
-#headerOutline {
+.landing-section__title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 128px;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #A5A988;
+  z-index: 2;
+}
+
+.landing-section__title--outline {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -63,20 +144,7 @@
   -webkit-text-stroke-color: #A5A988;
 }
 
-h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 128px;
-  line-height: 50px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #A5A988;
-  z-index: 2;
-}
-
-h2 {
+.landing-section__subtitle {
   font-family: 'Montserrat', sans-sserif;
   font-style: normal;
   font-weight: 400;
@@ -87,74 +155,16 @@ h2 {
   height: 200px;
 }
 
-#backgroundCircle {
+.landing-section__background-circle {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
 }
 
-#landingPageLogo {
+.landing-section__logo {
   position: absolute;
   bottom: 0;
   right: 0;
-}
-
-.background_rectangle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #C8C8A9;
-  opacity: 40%;
-  z-index: -1;
-  border: 1rem solid white;
-}
-
-.container__landingSection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  width: 100vw;
-  height: 100vh;
-}
-
-.text__landingSection-header {
-  font-size: 50px;
-  font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 0.02rem;
-  text-align: center;
-}
-
-.text__landingSection-subheader {
-  font-size: 28px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.02rem;
-  text-align: center;
-}
-
-.text__landingSection-content {
-  font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
-  max-width: 50rem;
-}
-
-@media only screen and (min-width: 320px) and (max-width: 480px) {
-  .text__landingSection-header {
-    font-size: 30px;
-  }
-
-  .text__landingSection-subheader {
-    font-size: 20px;
-  }
-
-  .text__landingSection-content {
-    font-size: 14px;
-  }
 }
 </style>

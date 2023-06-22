@@ -2,7 +2,7 @@
   <div class="container__components-home">
     <LandingSection />
     <ScrollArrow />
-    <SpecialOpportunities/>
+    <SpecialOpportunities />
     <OurStory />
     <LetterExamples />
     <TopArrow />

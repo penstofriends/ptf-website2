@@ -1,18 +1,52 @@
 <template>
   <section id="section__letterExamples">
-    <div class="container__letterExamples">
-    <div class="container__letterExamples-pictures">
-      <img src="/letterPic01.jpg" class="image__hidden" />
-      <img src="/letterPic02.jpg" class="image__hidden" />
-      <img src="/letterPic03.jpg" class="image__hidden" />
-      <img src="/letterPic04.jpg" class="image__hidden" />
+    <div id="line">
+      <div class="line"></div>
     </div>
-  </div>
+    <div class="container__letterExamples">
+      <div class="container__letterExamples-pictures">
+        <img src="/letterPic01.jpg" class="image__hidden" />
+        <img src="/letterPic02.jpg" class="image__hidden" />
+        <img src="/letterPic03.jpg" class="image__hidden" />
+        <img src="/letterPic04.jpg" class="image__hidden" />
+      </div>
+    </div>
   </section>
-  
 </template>
 
+<script>
+export default {
+  mounted() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('image__visible')
+        }
+      })
+    })
+
+    const hiddenElements = document.querySelectorAll('.image__hidden')
+    hiddenElements.forEach((element) => {
+      observer.observe(element)
+    })
+  }
+}
+</script>
+
 <style scoped>
+.line {
+  width: 100vw;
+  border: 5px solid #A5A988;
+  margin: 1rem;
+}
+
+#section__letterExamples {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 img {
   height: 22rem;
   margin: 1.2rem;
@@ -23,7 +57,7 @@ img {
   flex-direction: row;
   justify-content: center;
   padding: 1rem;
-  background-color: var(--green);
+  background-color: #A5A988;
 }
 
 .container__letterExamples {
@@ -67,38 +101,21 @@ img {
   }
 
   .image__visible:nth-child(1) {
-  transition-delay: 0.1s;
-}
+    transition-delay: 0.1s;
+  }
 
-.image__visible:nth-child(2) {
-  transition-delay: 0.1s;
-}
+  .image__visible:nth-child(2) {
+    transition-delay: 0.1s;
+  }
 
-.image__visible:nth-child(3) {
-  transition-delay: 0.1s;
-}
+  .image__visible:nth-child(3) {
+    transition-delay: 0.1s;
+  }
 
-.image__visible:nth-child(4) {
-  transition-delay: 0.1s;
-}
+  .image__visible:nth-child(4) {
+    transition-delay: 0.1s;
+  }
 }
 </style>
 
-<script>
-export default {
-  mounted() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('image__visible')
-        }
-      })
-    })
 
-    const hiddenElements = document.querySelectorAll('.image__hidden')
-    hiddenElements.forEach((element) => {
-      observer.observe(element)
-    })
-  }
-}
-</script>

@@ -25,7 +25,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding-left: 4rem;
+  padding-left: 7rem;
+  width: 100vw;
+  height: 100vh;
 }
 
 .left{
