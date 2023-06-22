@@ -1,7 +1,7 @@
 <template>
   <section id="section__letterExamples">
-    <div id="line">
-      <div class="line"></div>
+    <div class="container__line">
+      <div id="container__line-inner"></div>
     </div>
     <div class="container__letterExamples">
       <div class="container__letterExamples-pictures">
@@ -34,10 +34,14 @@ export default {
 </script>
 
 <style scoped>
-.line {
+
+#container__line-inner {
   width: 100vw;
   border: 5px solid #A5A988;
-  margin: 1rem;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #section__letterExamples {

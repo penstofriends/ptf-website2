@@ -12,7 +12,8 @@
     </div>
 
     <button class="landing-section__button">
-      <span>Get Started</span>
+      <span><nuxt-link id="landing-section__button-link" to="/GettingInvolved" draggable="false">Get
+          Started</nuxt-link></span>
       <img src="/arrow.svg" alt="">
     </button>
 
@@ -27,7 +28,6 @@
 </template>
 
 <style scoped>
-
 .landing-section {
   width: 100vw;
   height: 100vh;
@@ -79,7 +79,14 @@
   z-index: 4;
 }
 
-.landing-section__button > img {
+#landing-section__button-link {
+  text-align: center;
+  color: #35312B;
+  text-decoration: none;
+  height: 4rem;
+}
+
+.landing-section__button>img {
   width: 34px;
   margin-left: 10px;
   transition: transform .3s ease-in-out;
