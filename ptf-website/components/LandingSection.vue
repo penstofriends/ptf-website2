@@ -12,14 +12,15 @@
     </div>
 
     <button class="landing-section__button">
-      <span>Get Started</span>
+      <span><nuxt-link id="landing-section__button-link" to="/GettingInvolved" draggable="false">Get
+          Started</nuxt-link></span>
       <img src="/arrow.svg" alt="">
     </button>
 
     <div class="landing-section__bottom-left">
       <div class="landing-section__line"></div>
       <div class="landing-section__smiles">
-        <h2 class="landing-section__subtitle">Spreading smiles, one letter at a time</h2>
+        <h2 class="landing-section__smiles-text">Spreading smiles, one letter at a time</h2>
         <img width="146" src="/paper-aeroplane.svg" />
       </div>
     </div>
@@ -27,7 +28,6 @@
 </template>
 
 <style scoped>
-
 .landing-section {
   width: 100vw;
   height: 100vh;
@@ -36,8 +36,9 @@
 
 .landing-section__bottom-left {
   position: absolute;
-  top: 650px;
-  left: 50px;
+  padding: 2.5rem 5rem;
+  bottom: 0;
+  left: 0;
 }
 
 .landing-section__logo {
@@ -59,14 +60,17 @@
 }
 
 .landing-section__button {
+  top: 530px;
+  left: 6.75rem;
   cursor: pointer;
   transition: all .2s;
   background: transparent;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 29px;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  font-size: 1.5rem;
+  line-height: 1.8125rem;
   display: flex;
   align-items: center;
   text-align: center;
@@ -79,9 +83,16 @@
   z-index: 4;
 }
 
-.landing-section__button > img {
-  width: 34px;
-  margin-left: 10px;
+#landing-section__button-link {
+  text-align: center;
+  color: #35312B;
+  text-decoration: none;
+  height: 4rem;
+}
+
+.landing-section__button>img {
+  width: 2.125rem;
+  margin-left: .5rem;
   transition: transform .3s ease-in-out;
 }
 
@@ -112,7 +123,7 @@
 
 .landing-section__line {
   position: absolute;
-  width: 434px;
+  width: 27.125rem;
   height: 0px;
   border: 5px solid #C8C8A9;
 }
@@ -121,8 +132,8 @@
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 128px;
-  line-height: 50px;
+  font-size: 8rem;
+  line-height: 3.125rem;
   display: flex;
   align-items: center;
   text-align: center;
@@ -134,8 +145,8 @@
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 128px;
-  line-height: 50px;
+  font-size: 8rem;
+  line-height: 3.125rem;
   display: flex;
   align-items: center;
   text-align: center;
@@ -144,15 +155,15 @@
   -webkit-text-stroke-color: #A5A988;
 }
 
-.landing-section__subtitle {
+.landing-section__smiles-text {
   font-family: 'Montserrat', sans-sserif;
   font-style: normal;
   font-weight: 400;
-  font-size: 64px;
-  line-height: 115px;
+  font-size: 4rem;
+  line-height: 7.1875rem;
   color: #35312B;
-  width: 611px;
-  height: 200px;
+  width: 38.1875rem;
+  height: 12.5rem;
 }
 
 .landing-section__background-circle {

@@ -30,7 +30,7 @@
   padding: 2rem;
 }
 
-.left{
+.left {
   display: flex;
   flex-direction: column;
 }
