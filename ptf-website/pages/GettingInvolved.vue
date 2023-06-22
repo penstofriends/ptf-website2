@@ -67,21 +67,21 @@
 }
 
 .text-header {
-  text-align: center;
+  color: #000;
+  font-size: 3rem;
   font-family: 'Montserrat', sans-serif;
-  color: #7e9581;
-  font-size: 4rem;
-  font-weight: 700;
-  letter-spacing: 0.05rem;
-  margin: 2rem 3rem;
+  font-weight: 600;
+  line-height: 100%;
+  text-align: center;
 }
 
 .text-subheader {
   text-align: center;
+  color: #000;
+  font-size: 2.25rem;
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 400;
-  letter-spacing: 0.02rem;
+  font-weight: 600;
+  line-height: 100%;
 }
 
 .text-description {
@@ -118,6 +118,11 @@
 .container__gettingInvolved-buttons-send button,
 .container__gettingInvolved-buttons-recieve button {
   margin-top: 1rem;
+  width: 10.9375rem;
+height: 2.375rem;
+flex-shrink: 0;
+border-radius: 50px;
+background: #A5A988;
 }
 
 .container__gettingInvolved-buttons {
