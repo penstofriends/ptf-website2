@@ -85,13 +85,15 @@
 }
 
 .text-description {
-  font-family: 'Noto Sans', sans-serif;
-  font-weight: 400;
-  font-size: 1.25rem;
-  max-width: 50rem;
-  text-indent: 3rem;
-  margin-bottom: 2rem;
-  line-height: 1.75rem;
+  color: #000;
+font-size: 1rem;
+font-family: 'Open Sans',sans-serif;
+display: flex;
+width: 42.625rem;
+height: 5.75rem;
+flex-direction: column;
+flex-shrink: 0;
+
 }
 
 .container__gettingInvolved-text {
