@@ -9,13 +9,13 @@
       <div class="contacts">
         <a href="https://mail.google.com/mail/u/1/?view=cm&fs=1&to=penstofriends@gmail.com&tf=1"
           target="_blank" rel="noopener">
-          <img src="email.svg" alt="email/envelope icon" width="35" class="social-icon">
+          <img src="/email.svg" alt="email/envelope icon" width="35" class="social-icon">
         </a>
         <a href="https://www.instagram.com/penstofriends/" target="_blank" rel="noopener">
-          <img src="instagram.svg" alt="instagram icon" width="30" class="social-icon">
+          <img src="/instagram.svg" alt="instagram icon" width="30" class="social-icon">
         </a>
         <a href="https://www.tiktok.com/@penstofriends" target="_blank" rel="noopener">
-          <img src="tiktok.svg" alt="tiktok icon" width="25" class="social-icon">
+          <img src="/tiktok.svg" alt="tiktok icon" width="25" class="social-icon">
         </a>
       </div>
     </nav>
