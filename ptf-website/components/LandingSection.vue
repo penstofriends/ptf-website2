@@ -1,5 +1,5 @@
 <template>
-  <section class="landing-section">
+  <section id="landing-section">
     <div class="landing-section__background">
       <img src="/background-circle.svg" class="landing-section__background-circle" width="650" />
       <div class="landing-section__background-rectangle"></div>
@@ -11,9 +11,8 @@
       <h1 class="landing-section__title landing-section__title--outline">pens to friends</h1>
     </div>
 
-    <button class="landing-section__button">
-      <span><nuxt-link id="landing-section__button-link" to="/GettingInvolved" draggable="false">Get
-          Started</nuxt-link></span>
+    <button class="landing-section__button" @click="getStarted">
+      <span>Get Started</span>
       <img src="/arrow.svg" alt="">
     </button>
 
@@ -27,8 +26,15 @@
   </section>
 </template>
 
+<script setup>
+function getStarted() {
+  const router = useRouter()
+  router.push({ path: "/GettingInvolved" });
+}
+</script>
+
 <style scoped>
-.landing-section {
+#landing-section {
   width: 100vw;
   height: 100vh;
   display: flex;

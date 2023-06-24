@@ -1,10 +1,36 @@
 <template>
   <div class="container__topArrow none-topArrow">
-    <a href="#section__landingSection" class="anchor__topArrow">
+    <a href="#landing-section" class="anchor__topArrow">
       <p href="#section__landingSection" class="icon__topArrow"></p>
     </a>
   </div>
 </template>
+
+<script setup>
+const showArrow = ref(false)
+function ifScrolledEnough() {
+  const topArrow = document.querySelector('.container__topArrow')
+
+  if (window.scrollY > 300) {
+    showArrow.value = true
+    topArrow.classList.add('show-topArrow')
+    topArrow.classList.remove('none-topArrow')
+
+    topArrow.classList.remove('pop-out')
+    topArrow.classList.add('pop-in')
+  } else if (window.screenY < 300 && showArrow.value == true && useRoute().path == '/') {
+    topArrow.classList.remove('show-topArrow')
+    topArrow.classList.add('none-topArrow')
+
+    topArrow.classList.add('pop-out')
+    topArrow.classList.remove('pop-in')
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', ifScrolledEnough)
+})
+</script>
 
 <style scoped>
 .container__topArrow {
@@ -83,5 +109,6 @@
     opacity: 0;
     transform: translatey(150px);
   }
-}</style>
+}
+</style>
 

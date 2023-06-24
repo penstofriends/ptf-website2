@@ -10,11 +10,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue'
-import { useRoute } from 'vue-router'
-
 const shown = ref(false)
 const route = useRoute()
+const isFixedNavTab = ref(false)
+
 onMounted(() => {
 
     let prevScrollY = window.scrollY
@@ -22,25 +21,28 @@ onMounted(() => {
     function showNavTab() {
         const navTab = document.querySelector('.container__navTab')
 
-
         let currentScrollY = window.scrollY
         shown.value = currentScrollY > prevScrollY
         prevScrollY = currentScrollY
 
         if (route.path !== '/') {
             shown.value = true
-            navTab.style.position = 'relative' // Set the position style to relative
+            isFixedNavTab.value = false
         } else if (route.path == '/') {
-            navTab.style.position = 'fixed' // Set the position style to fixed
+            isFixedNavTab.value = true
         }
 
-        if (navTab.classList.contains('navTab_popOutAnimation') == false) {
-            navTab.classList.add('navTab_popOutAnimation')
+        if (navTab.classList.contains('navTab_popOut') == false) {
+            navTab.classList.add('navTab_popOut')
         }
     }
 
+    if (route.path !== '/') {
+        shown.value = true
+    }
 
     window.addEventListener('scroll', showNavTab)
+    
 
     // work on this later for mobile
     
@@ -57,6 +59,19 @@ onMounted(() => {
     //     }
     // });
 })
+
+watch(() => route.path, () => {
+    const navTab = document.querySelector('.container__navTab')
+    const isFixedNavTab = route.path == '/'
+
+    if (navTab) {
+        if (isFixedNavTab) {
+            navTab.style.position = 'fixed'
+        } else {
+            navTab.style.position = 'relative'
+        }
+    }
+})
 </script>
 
 <style>
@@ -68,7 +83,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 5;
     width: 100%;
 }
 
@@ -76,7 +91,7 @@ body {
     opacity: 0;
 }
 
-.navTab_popOutAnimation {
+.navTab_popOut {
     animation: pop-out 1s;
 }
 

@@ -11,6 +11,7 @@ export default {
   mounted() {
     setTimeout(() => {
       const scrollArrow = document.querySelector('.container__scrollArrow')
+      if(useRoute().path == '/')
       scrollArrow.classList.add('showArrow')
       scrollArrow.classList.remove('hideArrow')
     }, 1500)
