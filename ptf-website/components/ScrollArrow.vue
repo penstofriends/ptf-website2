@@ -1,7 +1,7 @@
 <template>
   <section id="section__scrollArrow">
     <div class="container__scrollArrow hideArrow">
-     <a href="#section__SpecialOpportunities" draggable="false"><span></span></a>
+      <a href="#section__SpecialOpportunities" draggable="false"><span></span></a>
     </div>
   </section>
 </template>
@@ -11,19 +11,19 @@ export default {
   mounted() {
     setTimeout(() => {
       const scrollArrow = document.querySelector('.container__scrollArrow')
-      if(useRoute().path == '/')
-      scrollArrow.classList.add('showArrow')
-      scrollArrow.classList.remove('hideArrow')
+      if (useRoute().path == '/') {
+        scrollArrow.classList.add('showArrow')
+        scrollArrow.classList.remove('hideArrow')
+      }
     }, 1500)
   },
 }
 </script>
 
 <style scoped>
-
 .container__scrollArrow a {
   position: absolute;
-  bottom:  0%;
+  bottom: 0%;
   padding-bottom: 60px;
   padding-left: 50px;
   padding-right: 50px;
@@ -45,27 +45,33 @@ export default {
   animation: scrolling 2s infinite;
   box-sizing: border-box;
 }
+
 @-webkit-keyframes scrolling {
   0% {
     -webkit-transform: rotate(-45deg) translate(0, 0);
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     -webkit-transform: rotate(-45deg) translate(-20px, 20px);
     opacity: 0;
   }
 }
+
 @keyframes scrolling {
   0% {
     transform: rotate(-45deg) translate(0, 0);
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     transform: rotate(-45deg) translate(-20px, 20px);
     opacity: 0;
@@ -85,8 +91,8 @@ export default {
   0% {
     bottom: -100px
   }
+
   100% {
     bottom: 0px
   }
-}
-</style>
+}</style>

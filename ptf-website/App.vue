@@ -12,7 +12,6 @@
 <script setup>
 const shown = ref(false)
 const route = useRoute()
-const isFixedNavTab = ref(false)
 
 onMounted(() => {
 
@@ -25,20 +24,15 @@ onMounted(() => {
         shown.value = currentScrollY > prevScrollY
         prevScrollY = currentScrollY
 
-        if (route.path !== '/') {
-            shown.value = true
-            isFixedNavTab.value = false
-        } else if (route.path == '/') {
-            isFixedNavTab.value = true
-        }
-
         if (navTab.classList.contains('navTab_popOut') == false) {
             navTab.classList.add('navTab_popOut')
         }
     }
 
     if (route.path !== '/') {
+        const navTab = document.querySelector('.container__navTab')
         shown.value = true
+        navTab.style.position = 'relative'
     }
 
     window.addEventListener('scroll', showNavTab)
@@ -61,15 +55,14 @@ onMounted(() => {
 })
 
 watch(() => route.path, () => {
+    console.log('a')
     const navTab = document.querySelector('.container__navTab')
-    const isFixedNavTab = route.path == '/'
 
-    if (navTab) {
-        if (isFixedNavTab) {
-            navTab.style.position = 'fixed'
-        } else {
-            navTab.style.position = 'relative'
-        }
+    if (route.path !== '/') {
+        shown.value = true
+        navTab.style.position = 'relative'
+    } else if (route.path == '/') {
+        navTab.style.position = 'fixed'
     }
 })
 </script>
