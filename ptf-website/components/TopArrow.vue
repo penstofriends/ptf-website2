@@ -44,14 +44,14 @@ onMounted(() => {
 
   background-color: white;
 
-  border: 3px rgb(69, 69, 69) solid;
+  border: 2px solid #A5A988;
   border-radius: 20%;
 
   z-index: 2;
 }
 
 .icon__topArrow {
-  border: solid black;
+  border: 1px solid #A5A988;
   border-width: 0 5px 5px 0;
   display: inline-block;
   padding: 10px;
