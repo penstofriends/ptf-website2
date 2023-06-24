@@ -60,5 +60,11 @@ function toggleAnswer() {
 .faq-answer {
   margin-top: 10px;
   padding: 10px;
+  max-width: 75rem;
+  padding: 0.5rem;
+  color: #35312B;
+  font-size: 1.25rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
 }
 </style>

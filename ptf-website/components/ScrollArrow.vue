@@ -1,8 +1,7 @@
 <template>
   <section id="section__scrollArrow">
     <div class="container__scrollArrow hideArrow">
-      
-     <a href="#section__ourStory" draggable="false"><span></span></a>
+     <a href="#section__SpecialOpportunities" draggable="false"><span></span></a>
     </div>
   </section>
 </template>

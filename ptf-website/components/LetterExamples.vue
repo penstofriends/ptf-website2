@@ -5,10 +5,12 @@
     </div>
     <div class="container__letterExamples">
       <div class="container__letterExamples-pictures">
-        <img src="/letterPic01.jpg" class="image__hidden" />
-        <img src="/letterPic02.jpg" class="image__hidden" />
-        <img src="/letterPic03.jpg" class="image__hidden" />
-        <img src="/letterPic04.jpg" class="image__hidden" />
+        <img src="/letteronplants.jpg" class="image__hidden" />
+        <img src="/moreorigamifroggylmao.jpg" class="image__hidden" />
+        <img src="/pinkletter.jpg" class="image__hidden" />
+        <img src="/SOCUTE.jpg" class="image__hidden" />
+        <img src="/bnw.jpg" class="image__hidden" />
+        <img src="/yeah.jpg" class="image__hidden" />
       </div>
     </div>
   </section>
@@ -64,9 +66,6 @@ img {
   background-color: #A5A988;
 }
 
-.container__letterExamples {
-  margin-bottom: 5vh;
-}
 
 /* hidden images will be invisible until intersected by the observer, and then will be visible with a transition of coming from the left staggered */
 .image__hidden {
@@ -98,6 +97,15 @@ img {
 .image__visible:nth-child(4) {
   transition-delay: 0.7s;
 }
+
+.image__visible:nth-child(5) {
+  transition-delay: 0.9s;
+}
+
+.image__visible:nth-child(6) {
+  transition-delay: 1.1s;
+}
+
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .container__letterExamples-pictures {
