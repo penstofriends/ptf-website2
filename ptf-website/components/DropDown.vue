@@ -67,4 +67,15 @@ function toggleAnswer() {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
+
+@media only screen and (max-width: 480px) {
+  .faq-question {
+  font-size: 1rem;
+  font-weight: 600;
+}
+  .faq-answer {
+  font-size: 1rem;
+  font-weight: 400;
+}
+}
 </style>
