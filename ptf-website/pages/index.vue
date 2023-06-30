@@ -3,6 +3,7 @@
     <LandingSection />
     <ScrollArrow />
     <SpecialOpportunities />
+    <SpecialOpportunitiesCopy />
     <OurStory />
     <LetterExamples />
     <TopArrow />

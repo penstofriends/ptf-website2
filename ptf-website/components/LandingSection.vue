@@ -209,7 +209,10 @@
   .landing-section__title,
   .landing-section__title--outline {
     font-size: 3.5rem;
-    line-height: 4.5rem;
+    line-height: 4.2rem;
+    margin: 0;
+    width: fit-content;
+    left: 2rem;
     width: 25rem;
     text-align: left;
   }
