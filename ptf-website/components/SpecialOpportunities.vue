@@ -1,43 +1,143 @@
 <template>
-        <section id="section__SpecialOpportunities">
-                <h2>Special Opportunities</h2>
-                <div class="cards">
-                        <OpportunityCard class="opportunityCard" 
-                        header="Happy Hearts Indonesia" 
-                        img="happyhearts.jpg"
-                        description="Happy Hearts Indonesia works with schools in low-income communities to ensure that students can attend a safe school. Happy Hearts uses its funding to build schools and provide educational resources to children in Indonesia."
-                        link="https://www.instagram.com/p/CtZMwgmt38J/" 
-                        />
-                        <div class="stayTuned">
-                                <h3>More opportunities to come... stay tuned!</h3>
-                        </div>
-                </div>
-        </section>
-</template>
+  <h2>Special Opportunities</h2>
+        <div class="carousel">
+          <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+            <div class="carousel-item">
+              <OpportunityCard
+                class="opportunityCard"
+                header="Happy Hearts Indonesia"
+                img="happyhearts.jpg"
+                description="Happy Hearts Indonesia works with schools in low-income communities to ensure that students can attend a safe school. Happy Hearts uses its funding to build schools and provide educational resources to children in Indonesia."
+                link="https://www.instagram.com/p/CtZMwgmt38J/"
+              />
+            </div>
       
-<style scoped>
-#section__SpecialOpportunities {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+            <!-- Slide 2 -->
+            <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+            <div class="carousel-item">
+              <div class="stayTuned">
+                <h3>More opportunities to come... stay tuned!</h3>
+              </div>
+            </div>
+      
+            <!-- Navigation controls -->
+            <label for="carousel-2" class="carousel-control next control-1">›</label>
+            <label for="carousel-1" class="carousel-control prev control-2">‹</label>
+          </div>
+      
+          <!-- Slide indicators -->
+          <ol class="carousel-indicators">
+            <li>
+              <label for="carousel-1" class="carousel-bullet">•</label>
+            </li>
+            <li>
+              <label for="carousel-2" class="carousel-bullet">•</label>
+            </li>
+          </ol>
+        </div>
+      </template>
+      
+      <style scoped>
+      .carousel {
+        position: relative;
+        margin-top: 26px;
+      }
+      
+      .carousel-inner {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        border-radius: 1rem;
+        box-shadow: 0 0.2rem 0.45rem rgba(0, 0, 0, 0.1);
+      }
+      
+      .carousel-open:checked + .carousel-item {
+        position: static;
+        opacity: 100;
+      }
+      
+      .carousel-item {
+        position: absolute;
+        opacity: 0;
+        transition: opacity 1s ease-out;
+      }
+      
+      .carousel-item img {
+        display: block;
+        height: auto;
+        max-width: 100%;
+      }
+      
+      .carousel-control {
+        color: #a5a988;
+        cursor: pointer;
+        display: none;
+        font-size: 40px;
+        height: 40px;
+        line-height: 35px;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
         text-align: center;
-        width: 100vw;
-        margin-top: 6rem;
-}
-
-.cards {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-}
-
-.opportunityCard {
-        margin: 1rem;
-}
-
-.stayTuned {
+        width: 40px;
+        z-index: 10;
+      }
+      
+      .carousel-control.prev {
+        left: 2%;
+      }
+      
+      .carousel-control.next {
+        right: 2%;
+      }
+      
+      .carousel-control:hover {
+        color: none;
+      }
+      
+      /* Show navigation controls based on checked slide */
+      #carousel-1:checked ~ .control-1,
+      #carousel-2:checked ~ .control-2 {
+        display: block;
+      }
+      
+      .carousel-indicators {
+        list-style: none;
+        padding: 0;
+        position: absolute;
+        bottom: 2%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 10;
+      }
+      
+      .carousel-indicators li {
+        display: inline-block;
+        margin: 0 5px;
+        top: 2.3rem;
+      }
+      
+      .carousel-bullet {
+        color: #fff;
+        cursor: pointer;
+        display: block;
+        font-size: 35px;
+      }
+      
+      .carousel-bullet:hover {
+        color: #aaaaaa;
+      }
+      
+      /* Highlight active slide indicator */
+      #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+      #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet {
+        color: #a5a988;
+      }
+      
+      .stayTuned {
         width: 26rem;
         height: 35rem;
         background-color: #fff;
@@ -48,28 +148,28 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-}
-
-h3 {
-        color: #35312B;
+      }
+      
+      h3 {
+        color: #35312b;
         text-align: center;
         font-size: 1.5rem;
         font-family: 'Montserrat', sans-serif;
-        font-weight:600;
+        font-weight: 600;
         margin-top: 1rem;
         width: 20rem;
         letter-spacing: 0.02rem;
         line-height: 2.25rem;
-}
-
-h2 {
+      }
+      
+      h2 {
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: 600;
         font-size: 3rem;
         line-height: 3.6875rem;
-        color: #35312B;
+        color: #35312b;
         margin-top: 6rem;
-}
-</style>
+      }
+      </style>
       
