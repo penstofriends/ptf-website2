@@ -1,6 +1,6 @@
 <template>
   <h2>Special Opportunities</h2>
-  <Carousel class="carousel" :autoplay="2000">
+  <Carousel class="carousel">
     <Slide v-for="(slide, index) in slides" :key="index">
       <div class="carousel-item">
         <OpportunityCard v-if="slide.header" :header="slide.header" :img="slide.img" :description="slide.description"
@@ -99,12 +99,27 @@ h3 {
 }
 
 h2 {
-        font-family: 'Montserrat', sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 3rem;
-        line-height: 3.6875rem;
-        color: #35312b;
-        margin-top: 6rem;
-      }
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 3.6875rem;
+  color: #35312b;
+  margin-top: 6rem;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .stayTuned {
+    width: 21rem;
+    height: 35rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    width: 100vw;
+    text-align: center;
+
+  }
+
+}
 </style>

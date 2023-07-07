@@ -83,5 +83,39 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
   }
+
+  @media only screen and (min-width: 320px) and (max-width: 480px){
+    .card {
+    width: 21rem;
+    height: 35rem;
+  }
+  
+  .card-image {
+    width: 17rem;
+    margin-top: 0.8rem;
+  }
+  .card-header {
+    color: #35312B;
+    text-align: center;
+    font-size: 1.4rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+  
+  .card-description {
+    margin-top: 0.25rem;
+    color: #35312B;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    width: 16rem;
+    text-align: center;
+  }
+  
+  .card-button {
+    margin-top: 0.2rem;
+    font-size: 1rem;
+  }
+  }
   </style>
   
