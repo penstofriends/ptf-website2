@@ -60,7 +60,7 @@ button {
   letter-spacing: 0.05rem;
 }
 
-.text__gettingInvolved-description{
+.text__gettingInvolved-description {
   color: #35312B;
   font-size: 1.25rem;
   font-family: 'Open Sans', sans-serif;
@@ -158,5 +158,52 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+@media only screen and (max-width: 480px) {
+  section {
+    text-align: center;
+  }
+
+  .text-subheader {
+    width: 20rem;
+    text-align: center;
+    overflow-wrap: normal;
+    word-break: break-all;
+    font-size: 2rem;
+  }
+
+  .container__gettingInvolved-text::before {
+    display: none;
+  }
+
+  .container__gettingInvolved-text {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container__gettingInvolved-letters {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .container__gettingInvolved-buttons-send button,
+  .container__gettingInvolved-buttons-recieve button {
+    margin-top: 1rem;
+    width: 10rem;
+    height: 3rem;
+    font-size: 1rem;
+  }
+
+  .container__gettingInvolved-buttons-recieve img,
+  .container__gettingInvolved-buttons-send img {
+    width: 7rem;
+  }
+
+  .text-description {
+  width: 80vw;
+  height: 5.75rem;
+  }
 }
 </style>

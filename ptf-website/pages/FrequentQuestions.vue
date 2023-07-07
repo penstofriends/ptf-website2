@@ -53,4 +53,31 @@ import { FAQs } from '../assets/FAQs.js'
   margin-bottom: 20px;
   width: 100%;
 }
+
+@media only screen and (max-width: 480px) {
+  .faq__title {
+    font-size: 2.25rem;
+    margin-top: 3rem;
+  }
+
+  .faq__description {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+
+
+  .faq__description-text {
+    font-size: 1rem;
+
+  }
+
+  .faq-list {
+    margin: 0 auto;
+    max-width: 22rem;
+  }
+
+  .faq-item {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
 </style>

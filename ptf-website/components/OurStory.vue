@@ -13,7 +13,8 @@
         story, or even just a few kind words. At Pens to Friends, our goal is to band the world together.</p>
     </div>
     <div class="right">
-      <img src="/our-story-graphic.svg" alt="letter with the words, 'dear friend'. the letter is surrounded by fish graphics">
+      <img src="/our-story-graphic.svg"
+        alt="letter with the words, 'dear friend'. the letter is surrounded by fish graphics">
     </div>
   </section>
 </template>
@@ -33,6 +34,8 @@
 .left {
   display: flex;
   flex-direction: column;
+  width: 100vw;
+  padding: 0 1.5rem 0 1.5rem;
 }
 
 h2 {
@@ -60,4 +63,45 @@ p {
   width: 48.5rem;
   height: 15rem;
 }
+
+@media only screen and (max-width: 480px) {
+  #section__ourStory {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: auto; 
+    padding: 0; 
+  }
+
+  .left {
+    order: 2; 
+    text-align: left; 
+  }
+
+  .right {
+    order: 1; 
+  }
+
+  .right img {
+  width: 28rem;
+  }
+
+  h2 {
+    font-size: 2.5rem; 
+    line-height: 3rem; 
+    margin-top: 0; 
+    text-align: center;
+    width: 100vw;
+  }
+
+  p {
+    width: 100%; 
+    height: auto; 
+    margin-top: 0;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
 </style>
