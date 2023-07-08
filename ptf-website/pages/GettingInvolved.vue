@@ -7,13 +7,27 @@
     <div class="container__gettingInvolved-text">
       <div class="container__gettingInvolved-virtual">
         <h2 class="text-subheader">Virtual Letters</h2>
-        <p class="text-description">
-          [description about virtual letters] Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit. Sed auctor odio in massa commodo commodo. Integer euismod posuere ipsum eget
-          sollicitudin. Ut commodo euismod urna, a lacinia arcu maximus sit amet. Etiam et sapien
-          sed odio consequat consectetur at nec magna. Morbi pellentesque, mi nec finibus dignissim,
-          elit ante faucibus ante, in malesuada eros lectus ac purus.
-        </p>
+        <div class="container__gettingInvolved-virtual-descriptions">
+          <p class="text-description">
+            As we want to provide a more consistent alternative volunteering option , we've decided to launch “Letters of
+            the Month.”
+            Through this program, volunteers will be able to write encouraging and uplifting letters to Individuals that
+            have signed up through PTF!
+            These letters will be sent out within the first week of each month. You can write about your interests, words
+            of
+            encouragement, or even advice.
+            Artwork will be accepted as a form of letters. Volunteers will be asked to submit their letters by the 25th of
+            each month so that it allows our
+            team to match letters up to recipients. Please keep in mind that these letters need to be appropriate!
+          </p>
+          <p class="text-description">
+            To get started, click the link below. Please be aware that each time you wish to volunteer, you will have to
+            fill out the form again.
+            If you do not sign the form before submitting your letters, you will not receive your hours. If you have any
+            questions, please feel free
+            to dm or email our team! Thank you all for your patience as we work to implement this new system.
+          </p>
+        </div>
         <div class="container__gettingInvolved-buttons">
           <div class="container__gettingInvolved-buttons-send">
             <img alt="logo" class="logo" src="/sendLetter.svg" width="135" height="135" />
@@ -102,6 +116,7 @@ button {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   line-height: 100%;
+  margin-bottom: 0;
 }
 
 .text-description {
@@ -110,10 +125,12 @@ button {
   font-family: 'Open Sans', sans-serif;
   display: flex;
   width: 42.625rem;
-  height: 5.75rem;
   flex-direction: column;
   flex-shrink: 0;
+  text-indent: 3rem;
+  line-height: 1.5rem;
 }
+
 
 .container__gettingInvolved-text {
   display: flex;
@@ -160,6 +177,12 @@ button {
   justify-content: center;
 }
 
+.container__gettingInvolved-virtual-descriptions {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
 @media only screen and (max-width: 480px) {
   section {
     text-align: center;
@@ -191,19 +214,20 @@ button {
   .container__gettingInvolved-buttons-send button,
   .container__gettingInvolved-buttons-recieve button {
     margin-top: 1rem;
-    width: 10rem;
+    width: 8rem;
     height: 3rem;
     font-size: 1rem;
   }
 
   .container__gettingInvolved-buttons-recieve img,
   .container__gettingInvolved-buttons-send img {
-    width: 7rem;
+    width: 6rem;
   }
 
   .text-description {
-  width: 80vw;
-  height: 5.75rem;
+    width: 80vw;
+    height: auto;
+    margin-top: 1rem;
   }
 }
 </style>

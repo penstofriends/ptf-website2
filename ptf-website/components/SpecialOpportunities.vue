@@ -2,12 +2,10 @@
   <h2>Special Opportunities</h2>
   <Carousel class="carousel">
     <Slide v-for="(slide, index) in slides" :key="index">
-      <div class="carousel-item">
         <OpportunityCard v-if="slide.header" :header="slide.header" :img="slide.img" :description="slide.description"
           :link="slide.link" />
         <div v-else class="stayTuned carousel-item">
           <h3>{{ slide.message }}</h3>
-        </div>
       </div>
     </Slide>
 
@@ -17,6 +15,7 @@
     </template>
   </Carousel>
 </template>
+
 
 <script>
 import { defineComponent } from 'vue'
@@ -51,6 +50,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
 .carousel {
   display: flex;
   flex-direction: column;
@@ -107,6 +107,12 @@ h2 {
   color: #35312b;
   margin-top: 6rem;
 }
+
+.carousel__pagination{
+  padding: 0;
+  margin: 0;
+}
+
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .stayTuned {
