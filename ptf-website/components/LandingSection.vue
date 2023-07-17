@@ -1,10 +1,10 @@
 <template>
   <section id="landing-section">
     <div class="landing-section__background">
-      <img src="/background-circle.svg" class="landing-section__background-circle" width="650" />
+      <img src="/background-circle.svg" class="landing-section__background-circle"/>
       <div class="landing-section__background-rectangle"></div>
     </div>
-    <img src="/landing-page-logo.svg" class="landing-section__logo" width="650" />
+    <img src="/landing-page-logo.svg" class="landing-section__logo"/>
 
     <div class="landing-section__headers">
       <h1 class="landing-section__title">pens to friends</h1>
@@ -19,8 +19,8 @@
     <div class="landing-section__bottom-left">
       <div class="landing-section__line"></div>
       <div class="landing-section__smiles">
-        <h2 class="landing-section__smiles-text">Spreading smiles, one letter at a time</h2>
-        <img width="146" src="/paper-aeroplane.svg" />
+        <h2 class="landing-section__smiles-text">Spreading smiles, <br> one letter at a time</h2>
+        <img src="/paper-aeroplane.svg" />
       </div>
     </div>
   </section>
@@ -50,6 +50,7 @@ function getStarted() {
   top: 0;
   left: 0;
   z-index: 1;
+  width: 34vw;
 }
 
 .landing-section__background-rectangle {
@@ -68,19 +69,20 @@ function getStarted() {
   position: absolute;
   bottom: 0;
   right: 0;
+  width: 34vw;
 }
 
 .landing-section__headers {
   position: absolute;
-  left: 260px;
-  top: 100px;
+  left: 5vw;
+  top: 5vh;
 }
 
 .landing-section__title {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 8rem;
+  font-size: 5rem;
   line-height: 3.125rem;
   display: flex;
   align-items: center;
@@ -93,7 +95,7 @@ function getStarted() {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 8rem;
+  font-size: 5rem;
   line-height: 3.125rem;
   display: flex;
   align-items: center;
@@ -135,7 +137,7 @@ function getStarted() {
 }
 
 .landing-section__button>img {
-  width: 2.125rem;
+  width: 2vw;
   margin-left: .5rem;
   transition: transform .3s ease-in-out;
 }
@@ -170,15 +172,18 @@ function getStarted() {
   z-index: 3;
 }
 
+
+.landing-section__smiles img {
+  width: 10vw;
+}
 .landing-section__smiles-text {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 4rem;
-  line-height: 7.1875rem;
+  font-size: 3rem;
+  line-height: 4rem;
+  margin-right: 1rem;
   color: #35312B;
-  width: 38.1875rem;
-  height: 12.5rem;
 }
 
 @media only screen and (max-width: 480px) {
