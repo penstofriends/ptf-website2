@@ -1,10 +1,10 @@
 <template>
   <section id="landing-section">
     <div class="landing-section__background">
-      <img src="/background-circle.svg" class="landing-section__background-circle"/>
+      <img src="/background-circle.svg" class="landing-section__background-circle" />
       <div class="landing-section__background-rectangle"></div>
     </div>
-    <img src="/landing-page-logo.svg" class="landing-section__logo"/>
+    <img src="/landing-page-logo.svg" class="landing-section__logo" />
 
     <div class="landing-section__headers">
       <h1 class="landing-section__title">pens to friends</h1>
@@ -176,6 +176,7 @@ function getStarted() {
 .landing-section__smiles img {
   width: 10vw;
 }
+
 .landing-section__smiles-text {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
@@ -186,7 +187,142 @@ function getStarted() {
   color: #35312B;
 }
 
-@media only screen and (max-width: 480px) {
+/* Large desktop screens and above (1030px and higher) */
+@media only screen and (min-width: 1030px) {}
+
+/* Medium-sized desktop screens (769px - 992px) */
+@media screen and (min-width: 769px) and (max-width: 992px) {}
+
+/* Tablets in landscape mode (768px wide or higher) */
+@media screen and (min-width: 768px) and (orientation: landscape) {}
+
+/* Tablets in portrait mode (768px wide or higher) */
+@media screen and (min-width: 768px) {
+  .landing-section__logo {
+    width: 60vw;
+  }
+
+  .landing-section__smiles img {
+    width: 15vw;
+  }
+
+  .landing-section__background-circle {
+    width: 70vw;
+  }
+
+  .landing-section__bottom-left {
+    padding: 2rem 3rem;
+    width: 50vw;
+  }
+
+  .landing-section__line {
+    width: 35vw;
+    border: 3px solid #C8C8A9;
+  }
+
+  .landing-section__smiles-text {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+  }
+  .landing-section__title {
+    font-size: 7rem;
+    text-align: left;
+    line-height: normal;
+    margin: 0;
+    width: 90vw;
+  }
+
+  .landing-section__headers {
+    padding: 1rem;
+  }
+  .landing-section__button {
+    font-size: 2rem;
+    box-shadow: 2px 4px 0 0 #A5A988;
+    display: flex;
+    justify-content: center;
+    height: 7vh;
+    width: 40vw;
+    padding: 1rem 1.25rem;
+  }
+
+  .landing-section__button img {
+    width: 5vw;
+  }
+}
+
+/* Mobile phones in landscape mode (576px wide or higher) */
+@media screen and (min-width: 576px) and (orientation: landscape) {}
+
+/* Mobile phones in portrait mode (576px wide or higher) */
+@media screen and (min-width: 576px) {}
+
+/* Smaller mobile phones (450px wide or lower) */
+@media only screen and (max-width: 450px) {
+  .landing-section__smiles-text {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .landing-section__line {
+    width: 50vw;
+    border: 2px solid #C8C8A9;
+  }
+
+  .landing-section__bottom-left {
+    padding: 1rem 2rem;
+    width: 60vw;
+  }
+
+  .landing-section__logo {
+    width: 40vw;
+  }
+
+  .landing-section__smiles img {
+    width: 15vw;
+  }
+
+  .landing-section__background-circle {
+    width: 80vw;
+  }
+
+  .landing-section__title {
+    font-size: 4rem;
+    text-align: left;
+    line-height: normal;
+    margin: 0;
+  }
+
+  .landing-section__headers {
+    padding: 1rem;
+  }
+
+  .landing-section__button {
+    font-size: 1.2rem;
+    box-shadow: 2px 4px 0 0 #A5A988;
+    display: relative;
+    height: 7vh;
+    padding: 1rem 1.25rem;
+  }
+
+  .landing-section__button img {
+    width: 8vw;
+  }
+}
+
+/* Extra small mobile phones (356px wide or lower) */
+@media only screen and (max-width: 356px) {}
+
+/* Large height screens (1200px and higher) */
+@media screen and (max-height: 1200px) {}
+
+/* Medium height screens (769px - 992px) */
+@media screen and (max-height: 992px) {}
+
+/* Small height screens (769px - 992px) */
+@media screen and (max-height: 768px) {}
+
+
+/* @media only screen and (max-width: 480px) {
 
   .landing-section__background-circle {
     width: 85vw;
@@ -233,7 +369,7 @@ function getStarted() {
     left: 3rem;
     padding: 1rem 2.5rem;
     height: 3.5rem;
-    width: fit-content;
+    width: fit-contesnt;
     font-size: 1.25rem;
     box-shadow: 5px 5px 0 0 #A5A988;
     z-index: 4;
@@ -242,5 +378,4 @@ function getStarted() {
   .landing-section__headers {
     left: 0;  
   }
-}
-</style>
+} */</style>
