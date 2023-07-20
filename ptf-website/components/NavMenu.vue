@@ -8,12 +8,10 @@
         <span></span>
       </label>
     </div>
-
     <div class="container__navMenu-links">
-      <router-link to="/" draggable="false">Home</router-link>
-      <router-link to="/GettingInvolved" draggable="false">Get Involved</router-link>
-      <router-link to="/FrequentQuestions" draggable="false">FAQs</router-link>
-      <router-link to="/ContactUs" draggable="false">Contact Us</router-link>
+      <nuxt-link to="/" draggable="false">Home</nuxt-link>
+      <nuxt-link to="/GettingInvolved" draggable="false">Get Involved</nuxt-link>
+      <nuxt-link to="/FrequentQuestions" draggable="false">FAQs</nuxt-link>
     </div>
   </div>
 </template>
@@ -39,11 +37,10 @@ export default {
 .container__menu {
   font-family: 'Montserrat', sans-serif;
   width: 100vw;
-  display: flex;
   position: fixed;
-  z-index: 3;
-  flex-direction: column;
-
+  top: 0;
+  left: 0;
+  z-index: 5;
   padding: 1rem 0;
   opacity: 1;
 }

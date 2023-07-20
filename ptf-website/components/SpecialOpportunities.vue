@@ -1,19 +1,21 @@
 <template>
-  <h2>Special Opportunities</h2>
-  <Carousel class="carousel">
-    <Slide v-for="(slide, index) in slides" :key="index">
-        <OpportunityCard v-if="slide.header" :header="slide.header" :img="slide.img" :description="slide.description"
-          :link="slide.link" />
-        <div v-else class="stayTuned carousel-item">
-          <h3>{{ slide.message }}</h3>
-      </div>
-    </Slide>
+  <section id="section__SpecialOpportunities">
+    <h2>Special Opportunities</h2>
+    <Carousel class="carousel">
+      <Slide v-for="(slide, index) in slides" :key="index">
+          <OpportunityCard v-if="slide.header" :header="slide.header" :img="slide.img" :description="slide.description"
+            :link="slide.link" />
+          <div v-else class="stayTuned carousel-item">
+            <h3>{{ slide.message }}</h3>
+        </div>
+      </Slide>
 
-    <template #addons>
-      <Navigation />
-      <Pagination />
-    </template>
-  </Carousel>
+      <template #addons>
+        <Navigation />
+        <Pagination />
+      </template>
+    </Carousel>
+  </section>
 </template>
 
 
@@ -50,7 +52,11 @@ export default defineComponent({
 </script>
 
 <style scoped>
-
+#section__SpecialOpportunities {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .carousel {
   display: flex;
   flex-direction: column;

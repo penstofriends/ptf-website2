@@ -1,7 +1,10 @@
 <template>
     <div class="container__app">
-        <div :class="{ container__navTab: true, navTab_visible: shown, navTab_hide: !shown }">
-            <NuxtLayout />
+        <div class="container__navTab navTab_hide">
+            <NavTab />
+        </div>
+        <div class="container__navMenu">
+            <NavMenu />
         </div>
         <div>
             <NuxtPage />
@@ -14,56 +17,38 @@ const shown = ref(false)
 const route = useRoute()
 
 onMounted(() => {
+        let prevScrollY = window.scrollY
 
-    let prevScrollY = window.scrollY
+        function showNavTab() {
+            const navTab = document.querySelector('.container__navTab')
 
-    function showNavTab() {
-        const navTab = document.querySelector('.container__navTab')
+            let currentScrollY = window.scrollY
+            shown.value = currentScrollY > prevScrollY
+            prevScrollY = currentScrollY
 
-        let currentScrollY = window.scrollY
-        shown.value = currentScrollY > prevScrollY
-        prevScrollY = currentScrollY
-
-        if (navTab.classList.contains('navTab_popOut') == false) {
-            navTab.classList.add('navTab_popOut')
+            if (shown.value && route.path == '/') {
+                navTab.classList.remove('navTab_hide')
+                navTab.classList.add('navTab_visible')
+            } else if (!shown.value && route.path == '/') {
+                navTab.classList.remove('navTab_visible')
+                navTab.classList.add('navTab_hide', 'navTab_popOut')
+            }
         }
-    }
 
-    if (route.path !== '/') {
-        const navTab = document.querySelector('.container__navTab')
-        shown.value = true
-        navTab.style.position = 'relative'
-    }
-
-    window.addEventListener('scroll', showNavTab)
-    
-
-    // work on this later for mobile
-    
-    // document.addEventListener('click', (event) => {
-
-    //     const navMenu = document.querySelector('.container__navMenu')
-    //     const navMenuLinks = document.querySelector('.container__navMenu-links')
-    //     const checkbox = document.getElementById('burger')
-
-    //     const clickInsideNavmenu = navMenu.contains(event.target);
-    //     if (clickInsideNavmenu == false && navMenuLinks.classList.contains('container__navMenu-links-active')) {
-    //         navMenuLinks.classList.remove('container__navMenu-links-active')
-    //         checkbox.checked = false;
-    //     }
-    // });
+        window.addEventListener('scroll', showNavTab)
 })
 
 watch(() => route.path, () => {
-    console.log('a')
-    const navTab = document.querySelector('.container__navTab')
+        const navTab = document.querySelector('.container__navTab')
 
-    if (route.path !== '/') {
-        shown.value = true
-        navTab.style.position = 'relative'
-    } else if (route.path == '/') {
-        navTab.style.position = 'fixed'
-    }
+        if (route.path !== '/') {
+            shown.value = true
+            navTab.classList.remove('navTab_visible', 'navTab_hide', 'navTab_popOut')
+            navTab.style.position = 'relative'
+        } else if (route.path == '/') {
+            navTab.style.position = 'fixed'
+            navTab.classList.add('navTab_hide')
+        }
 })
 </script>
 
@@ -71,8 +56,7 @@ watch(() => route.path, () => {
 body {
     margin: 0;
 }
-
-.container__navTab {
+.container__navTab, .container__navMenu, .fixed p{
     position: fixed;
     top: 0;
     left: 0;
@@ -124,6 +108,25 @@ body {
     to {
         transform: translateY(-100px);
         opacity: 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container__menu-icon {
+        position: relative;
+    }
+
+    .navTab_hide {
+        opacity: 1;
+    }
+
+    .navTab_popOut {
+        animation: none;
+    }
+
+    .navTab_visible {
+        opacity: 1;
+        animation: none;
     }
 }
 </style>

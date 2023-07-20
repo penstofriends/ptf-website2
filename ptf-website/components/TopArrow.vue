@@ -8,22 +8,25 @@
 
 <script setup>
 const showArrow = ref(false)
+const route = useRoute()
 function ifScrolledEnough() {
   const topArrow = document.querySelector('.container__topArrow')
 
-  if (window.scrollY > 300) {
-    showArrow.value = true
-    topArrow.classList.add('show-topArrow')
-    topArrow.classList.remove('none-topArrow')
+  if (route.path == '/') {
+    if (window.scrollY > 300) {
+      showArrow.value = true
+      topArrow.classList.add('show-topArrow')
+      topArrow.classList.remove('none-topArrow')
 
-    topArrow.classList.remove('pop-out')
-    topArrow.classList.add('pop-in')
-  } else if (window.screenY < 300 && showArrow.value == true && useRoute().path == '/') {
-    topArrow.classList.remove('show-topArrow')
-    topArrow.classList.add('none-topArrow')
+      topArrow.classList.remove('pop-out')
+      topArrow.classList.add('pop-in')
+    } else if (window.screenY < 300 && showArrow.value == true && useRoute().path == '/') {
+      topArrow.classList.remove('show-topArrow')
+      topArrow.classList.add('none-topArrow')
 
-    topArrow.classList.add('pop-out')
-    topArrow.classList.remove('pop-in')
+      topArrow.classList.add('pop-out')
+      topArrow.classList.remove('pop-in')
+    }
   }
 }
 
