@@ -10,17 +10,17 @@
     </div>
     <div class="container__navMenu-links">
       <div class="container__navMenu-link home-link">
-        <img src="home.png" alt="Home" />
+        <img src="/home.png" alt="Home" />
         <nuxt-link @click="closeMenu" to="/" draggable="false">Home</nuxt-link>
       </div>
       <div class="container__navMenu-link involved-link">
-        <img src="messenger.png" alt="Home" />
+        <img src="/messenger.png" alt="Home" />
         <nuxt-link @click="closeMenu" to="/GettingInvolved" draggable="false"
           >Get Involved</nuxt-link
         >
       </div>
       <div class="container__navMenu-link faq-link">
-        <img src="question.png" alt="Home" />
+        <img src="/question.png" alt="Home" />
         <nuxt-link @click="closeMenu" to="/FrequentQuestions" draggable="false"
           >FAQs</nuxt-link
         >
