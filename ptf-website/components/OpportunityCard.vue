@@ -1,10 +1,10 @@
 <template>
     <div class="card">
-      <img :src="img" alt="Card Image" class="card-image">
-      <h2 class="card-header">{{ header }}</h2>
-      <p class="card-description">{{ description }}</p>
+      <img v-if="img" :src="img" alt="Card Image" class="card-image">
+      <h2 v-if="header" class="card-header">{{ header }}</h2>
+      <p v-if="description" class="card-description">{{ description }}</p>
   
-      <a :href="link" target="_blank" rel="noopener">
+      <a v-if="header" :href="link" target="_blank" rel="noopener">
         <button class="card-button">Learn More</button>
       </a>
     </div>
@@ -15,19 +15,15 @@
     props: {
       header: {
         type: String,
-        required: true
       },
       img: {
         type: String,
-        required: true
       },
       description: {
         type: String,
-        required: true
       },
       link: {
         type: String,
-        required: true
       }
     }
   };

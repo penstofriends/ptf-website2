@@ -17,6 +17,8 @@ const shown = ref(false)
 const route = useRoute()
 
 onMounted(() => {
+        screen.orientation.lock('portrait');
+
         let prevScrollY = window.scrollY
 
         function showNavTab() {
@@ -56,6 +58,9 @@ watch(() => route.path, () => {
 body {
     margin: 0;
 }
+.container__app {
+    width: 100vw;
+}
 .container__navTab, .container__navMenu, .fixed p{
     position: fixed;
     top: 0;
@@ -68,13 +73,13 @@ body {
     opacity: 0;
 }
 
-.navTab_popOut {
-    animation: pop-out 1s;
-}
-
 .navTab_visible {
     opacity: 1;
     animation: pop-in 1s;
+}
+
+.navTab_popOut {
+    animation: pop-out 1s;
 }
 
 .routerView {
@@ -114,19 +119,6 @@ body {
 @media only screen and (max-width: 480px) {
     .container__menu-icon {
         position: relative;
-    }
-
-    .navTab_hide {
-        opacity: 1;
-    }
-
-    .navTab_popOut {
-        animation: none;
-    }
-
-    .navTab_visible {
-        opacity: 1;
-        animation: none;
     }
 }
 </style>

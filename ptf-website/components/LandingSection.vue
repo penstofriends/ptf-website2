@@ -206,7 +206,7 @@ function getStarted() {
   }
 
   .landing-section__line {
-    width: 17rem;
+    width: 70vw;
     height: 0px;
     border: 2.5px solid #C8C8A9;
   }
@@ -216,15 +216,14 @@ function getStarted() {
   .landing-section__title--outline {
     font-size: 3.5rem;
     line-height: 4.2rem;
+    width: 80vw;
     margin: 0;
-    width: fit-content;
     left: 2rem;
-    width: 25rem;
     text-align: left;
   }
 
   .landing-section__button {
-    top: 480px;
+    top: 50vh;
     left: 3rem;
     padding: 1rem 2.5rem;
     height: 3.5rem;
@@ -236,6 +235,24 @@ function getStarted() {
 
   .landing-section__headers {
     left: 0;  
+    top: 10vh;
+  }
+}
+
+@media only screen and (max-height: 730px) {
+  .landing-section__title {
+    font-size: 3rem;
+    line-height: initial;
+  }
+
+  .landing-section__smiles-text {
+    font-size: 2rem;
+    line-height: initial;
+    
+    height: 20vh;
+  }
+  .landing-section__smiles img {
+    height: 30vh;
   }
 }
 </style>

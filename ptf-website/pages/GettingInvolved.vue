@@ -211,6 +211,10 @@ button {
     margin: 1rem;
   }
 
+  .container__gettingInvolved-buttons-send,
+  .container__gettingInvolved-buttons-recieve {
+    margin: 1rem;
+  }
   .container__gettingInvolved-buttons-send button,
   .container__gettingInvolved-buttons-recieve button {
     margin-top: 1rem;

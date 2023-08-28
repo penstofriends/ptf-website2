@@ -9,74 +9,109 @@
       </label>
     </div>
     <div class="container__navMenu-links">
-      <nuxt-link to="/" draggable="false">Home</nuxt-link>
-      <nuxt-link to="/GettingInvolved" draggable="false">Get Involved</nuxt-link>
-      <nuxt-link to="/FrequentQuestions" draggable="false">FAQs</nuxt-link>
+      <div class="container__navMenu-link home-link">
+        <img src="home.png" alt="Home" />
+        <nuxt-link @click="closeMenu" to="/" draggable="false">Home</nuxt-link>
+      </div>
+      <div class="container__navMenu-link involved-link">
+        <img src="messenger.png" alt="Home" />
+        <nuxt-link @click="closeMenu" to="/GettingInvolved" draggable="false"
+          >Get Involved</nuxt-link
+        >
+      </div>
+      <div class="container__navMenu-link faq-link">
+        <img src="question.png" alt="Home" />
+        <nuxt-link @click="closeMenu" to="/FrequentQuestions" draggable="false"
+          >FAQs</nuxt-link
+        >
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  mounted() {
-    const checkbox = document.getElementById('burger')
-    const navMenu = document.querySelector('.container__navMenu-links')
+  methods: {
+    closeMenu() {
+      const checkbox = document.getElementById("burger");
+      const navMenu = document.querySelector(".container__navMenu-links");
 
-    checkbox.addEventListener('click', () => {
+      checkbox.checked = false;
+      navMenu.classList.remove("container__navMenu-links-active");
+      document.body.classList.remove("body-no-scroll");
+    },
+  },
+  mounted() {
+    const checkbox = document.getElementById("burger");
+    const navMenu = document.querySelector(".container__navMenu-links");
+
+    checkbox.addEventListener("click", () => {
       if (checkbox.checked) {
-        navMenu.classList.add('container__navMenu-links-active')
+        document.body.classList.add("body-no-scroll");
+        navMenu.classList.add("container__navMenu-links-active");
       } else {
-        navMenu.classList.remove('container__navMenu-links-active')
+        document.body.classList.remove("body-no-scroll");
+        navMenu.classList.remove("container__navMenu-links-active");
       }
-    })
-  }
-}
+    });
+  },
+};
 </script>
 
 <style>
+.body-no-scroll {
+  overflow: hidden;
+}
+
 .container__menu {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   width: 100vw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 5;
-  padding: 1rem 0;
   opacity: 1;
+}
+
+.container__menu-icon {
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  z-index: 5;
 }
 
 .container__navMenu-links {
   display: none;
-  height: 25vh;
-  width: 80vw;
-
-  margin-top: 20px;
-  margin-left: 10px;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 10vh;
+  padding-left: 1rem;
 
   flex-direction: column;
-  justify-content: space-around;
-  
-  border: 4px solid black;
 
   background-color: #bcd1be;
 }
 
 .container__navMenu-links a {
-  padding: 0 1rem;
+  padding: 1rem 1rem;
   font-size: 1.6rem;
   color: black;
   text-decoration: none;
 }
 
+.container__navMenu-link {
+  display: flex;
+  align-items: center;
+}
+
+.container__navMenu-link img {
+  height: 30px;
+}
+
 .container__navMenu-links-active {
   opacity: 1;
   display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 3;
 }
 
-.container__menu-icon {
-  padding-left: 1rem;
-}
-
+/* menu icon stuff */
 .burger {
   position: relative;
   width: 40px;
@@ -142,5 +177,4 @@ export default {
     display: none;
   }
 }
-
 </style>

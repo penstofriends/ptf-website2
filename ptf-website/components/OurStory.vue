@@ -36,6 +36,11 @@
   flex-direction: column;
   width: 100vw;
   padding: 0 1.5rem 0 1.5rem;
+  align-items: center;
+}
+
+.left h2 {
+  margin: 0;
 }
 
 h2 {
@@ -84,15 +89,13 @@ p {
   }
 
   .right img {
-  width: 28rem;
+  width: 100vw;
   }
 
   h2 {
     font-size: 2.5rem; 
     line-height: 3rem; 
-    margin-top: 0; 
     text-align: center;
-    width: 100vw;
   }
 
   p {

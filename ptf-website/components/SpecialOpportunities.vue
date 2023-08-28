@@ -1,13 +1,11 @@
 <template>
   <section id="section__SpecialOpportunities">
     <h2>Special Opportunities</h2>
-    <Carousel class="carousel">
+    <Carousel class="carousel" :items-to-show="1">
       <Slide v-for="(slide, index) in slides" :key="index">
           <OpportunityCard v-if="slide.header" :header="slide.header" :img="slide.img" :description="slide.description"
             :link="slide.link" />
-          <div v-else class="stayTuned carousel-item">
-            <h3>{{ slide.message }}</h3>
-        </div>
+          <OpportunityCard v-else :description="slide.message"/>
       </Slide>
 
       <template #addons>
@@ -35,6 +33,10 @@ export default defineComponent({
   },
   data() {
     return {
+      settings: {
+        itemsToShow: 1,
+        snapAlign: 'center',
+      },
       slides: [
         {
           header: 'Happy Hearts Indonesia',
@@ -56,42 +58,15 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100vw;
 }
-.carousel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.carousel-item {
-  min-height: 200px;
-  width: fit-content;
-  font-size: 20px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .carousel-item img {
   max-width: 100%;
   height: auto;
 }
-
-.stayTuned {
-  width: 26rem;
-  height: 35rem;
-  background-color: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 0.2rem 0.45rem rgba(0, 0, 0, 0.1);
-  padding: 0.2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.carousel {
+  width: 40vw;
 }
-
 h3 {
   color: #35312b;
   text-align: center;
@@ -133,5 +108,11 @@ h2 {
 
   }
 
+  .carousel {
+    width: 100vw;
+  }
+  .carousel__next {
+    display: none;
+  }
 }
 </style>
