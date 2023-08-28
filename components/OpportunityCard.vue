@@ -80,7 +80,7 @@
     font-size: 1rem;
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 480px){
+  @media only screen and (max-width: 720px) {
     .card {
     width: 21rem;
     height: 35rem;

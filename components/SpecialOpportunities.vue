@@ -95,7 +95,7 @@ h2 {
 }
 
 
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+@media only screen and (max-width: 1200px) {
   .stayTuned {
     width: 21rem;
     height: 35rem;

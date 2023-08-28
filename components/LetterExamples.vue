@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="carousel">
-      <Carousel :autoplay="2000" :wrap-around="true" :transition="500">
+      <Carousel :autoplay="2000" :wrap-around="true" :transition="300" :items-to-show="items">
         <Slide v-for="(image, index) in images" :key="index">
           <div class="carousel-item">
             <img :src="image" alt="Carousel Image" class="carousel-image">
@@ -64,6 +64,16 @@ export default defineComponent({
     hiddenElements.forEach((element) => {
       observer.observe(element)
     })
+  },
+  computed: {
+    items() {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 720) {
+        return 1;
+      } else if (screenWidth >= 720 && screenWidth < 1200) {
+        return 3;
+      }
+    },
   }
 })
 </script>
@@ -148,7 +158,7 @@ img {
   transition-delay: 1.1s;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+@media only screen and (max-width: 1200px) {
   .carousel {
     display: block;
     background-color: #A5A988;

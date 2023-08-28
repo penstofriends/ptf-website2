@@ -90,7 +90,7 @@
   transform: scale(1.05);
 }
 
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+@media only screen and (max-width: 1200px) {
   .container__navTab-links {
     display: none;
   }

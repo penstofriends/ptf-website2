@@ -32,7 +32,6 @@ export default {
 
   opacity: .6;
 
-  z-index: 1;
 }
 
 #section__scrollArrow a span {
@@ -83,7 +82,6 @@ export default {
 }
 
 .showArrow a {
-  opacity: 1;
   animation: slide-in 1s;
 }
 

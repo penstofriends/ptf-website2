@@ -49,9 +49,17 @@ export default {
       if (checkbox.checked) {
         document.body.classList.add("body-no-scroll");
         navMenu.classList.add("container__navMenu-links-active");
+        setTimeout(() => {
+          navMenu.classList.add("container__navMenu-links-active-fadeIn");
+          navMenu.classList.remove("container__navMenu-links-active-fadeOut");
+        }, 10);
       } else {
         document.body.classList.remove("body-no-scroll");
-        navMenu.classList.remove("container__navMenu-links-active");
+        navMenu.classList.add("container__navMenu-links-active-fadeOut");
+          navMenu.classList.remove("container__navMenu-links-active-fadeIn");
+        setTimeout(() => {
+          navMenu.classList.remove("container__navMenu-links-active");
+        }, 250);
       }
     });
   },
@@ -104,11 +112,21 @@ export default {
 }
 
 .container__navMenu-links-active {
-  opacity: 1;
+  opacity: 0;
   display: flex;
   position: fixed;
   top: 0;
   z-index: 3;
+}
+
+.container__navMenu-links-active-fadeIn {
+  transition: opacity 0.25s ease-in-out;
+  opacity: 1;
+}
+
+.container__navMenu-links-active-fadeOut {
+  transition: opacity 0.25s ease-in-out;
+  opacity: 0;
 }
 
 /* menu icon stuff */
@@ -172,9 +190,13 @@ export default {
   left: 5px;
 }
 
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 1200px) {
   .container__menu {
     display: none;
   }
+}
+
+@media only screen and (min-width: 721px) and (max-width: 1200px) {
+  
 }
 </style>

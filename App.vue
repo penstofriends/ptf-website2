@@ -17,8 +17,6 @@ const shown = ref(false)
 const route = useRoute()
 
 onMounted(() => {
-        screen.orientation.lock('portrait');
-
         let prevScrollY = window.scrollY
 
         function showNavTab() {

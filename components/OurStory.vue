@@ -39,10 +39,6 @@
   align-items: center;
 }
 
-.left h2 {
-  margin: 0;
-}
-
 h2 {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
@@ -53,6 +49,7 @@ h2 {
   align-items: center;
   text-align: center;
   color: #35312B;
+  margin-bottom: 1rem;
 }
 
 p {
@@ -69,7 +66,7 @@ p {
   height: 15rem;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 720px) {
   #section__ourStory {
     flex-direction: column;
     align-items: center;
@@ -107,4 +104,15 @@ p {
   }
 }
 
+@media only screen and (min-width: 721px) and (max-width: 1200px) {
+  #section__ourStory {
+    flex-direction: column-reverse;
+    height: inherit;
+    padding-left: 0;
+  }
+
+  .right img {
+    width: 90vw;
+  }
+}  
 </style>

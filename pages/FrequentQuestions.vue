@@ -54,7 +54,7 @@ import { FAQs } from '../assets/FAQs.js'
   width: 100%;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 720px) {
   .faq__title {
     font-size: 2.25rem;
     margin-top: 3rem;
