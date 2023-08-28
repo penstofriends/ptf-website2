@@ -70,8 +70,8 @@ export default {
 }
 
 .container__menu-icon {
-  padding-left: 0.5rem;
-  padding-top: 0.5rem;
+  padding-left: 0.8rem;
+  padding-top: 0.8rem;
   z-index: 5;
 }
 
@@ -80,11 +80,11 @@ export default {
   width: 100vw;
   height: 100vh;
   padding-top: 10vh;
-  padding-left: 1rem;
+  padding-left: 2rem;
 
   flex-direction: column;
 
-  background-color: #bcd1be;
+  background-color: #C8C8A9;
 }
 
 .container__navMenu-links a {
@@ -130,7 +130,7 @@ export default {
   position: absolute;
   height: 4px;
   width: 100%;
-  background: black;
+  background: #a5a988;
   border-radius: 9px;
   opacity: 1;
   left: 0;
