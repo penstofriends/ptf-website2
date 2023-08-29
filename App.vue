@@ -27,7 +27,7 @@ onMounted(() => {
             prevScrollY = currentScrollY
 
             if (shown.value && route.path == '/') {
-                navTab.classList.remove('navTab_hide')
+                navTab.classList.remove('navTab_hide', 'navTab_popOut')
                 navTab.classList.add('navTab_visible')
             } else if (!shown.value && route.path == '/') {
                 navTab.classList.remove('navTab_visible')

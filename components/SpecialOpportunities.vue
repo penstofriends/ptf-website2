@@ -137,7 +137,7 @@ h2 {
 
 @media only screen and (min-width: 721px) and (max-width: 1200px) {
   h2 {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 }
 </style>

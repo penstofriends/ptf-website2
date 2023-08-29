@@ -125,7 +125,7 @@ onMounted(() => {
 }
 
 .landing-section__button {
-  top: 530px;
+  top: 55vh;
   left: 6.75rem;
   cursor: pointer;
   transition: all 0.2s;
@@ -183,6 +183,8 @@ onMounted(() => {
   width: 27.125rem;
   height: 0px;
   border: 5px solid #c8c8a9;
+
+  top: 20%
 }
 
 .landing-section__smiles {

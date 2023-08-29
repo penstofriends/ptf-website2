@@ -114,5 +114,14 @@ p {
   .right img {
     width: 90vw;
   }
+
+  .left h2 {
+    font-size: 4rem;
+  }
+  .left p {
+    font-size: 1.75rem;
+    line-height: normal;
+    height: fit-content;
+  }
 }  
 </style>
