@@ -49,6 +49,7 @@ export default defineComponent({
         '/bnw.jpg',
         '/yeah.jpg',
       ],
+      items: 1
     }
   },
   mounted() {
@@ -64,17 +65,14 @@ export default defineComponent({
     hiddenElements.forEach((element) => {
       observer.observe(element)
     })
-  },
-  computed: {
-    items() {
-      const screenWidth = window.innerWidth;
+
+    const screenWidth = window.innerWidth;
       if (screenWidth < 720) {
-        return 1;
+        this.items = 1;
       } else if (screenWidth >= 720 && screenWidth < 1200) {
-        return 3;
+        this.items = 3;
       }
-    },
-  }
+  },
 })
 </script>
 
