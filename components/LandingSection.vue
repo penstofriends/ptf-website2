@@ -286,6 +286,8 @@ onMounted(() => {
   .landing-section__headers {
     left: 50px;
     top: 60px;
+    
+    margin-left: 5vw;
   }
   .landing-section__background-circle {
     height: 40vh;
@@ -295,11 +297,17 @@ onMounted(() => {
     line-height: 4rem;
     width: 40vw;
   }
+  .landing-section__line {
+    width: 50vw;
+  }
   .landing-section__button {
-    top: 60vh;
+    top: 65vh;
   }
   .landing-section__title {
-    font-size: 5rem;
+    font-size: 7rem;
+    margin: 0;
+    text-align: initial;
+    line-height: normal;
   }
   .landing-section__logo {
     height: 50vh;

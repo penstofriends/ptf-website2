@@ -56,7 +56,7 @@ export default {
       } else {
         document.body.classList.remove("body-no-scroll");
         navMenu.classList.add("container__navMenu-links-active-fadeOut");
-          navMenu.classList.remove("container__navMenu-links-active-fadeIn");
+        navMenu.classList.remove("container__navMenu-links-active-fadeIn");
         setTimeout(() => {
           navMenu.classList.remove("container__navMenu-links-active");
         }, 250);
@@ -92,7 +92,7 @@ export default {
 
   flex-direction: column;
 
-  background-color: #C8C8A9;
+  background-color: #c8c8a9;
 }
 
 .container__navMenu-links a {
@@ -197,6 +197,20 @@ export default {
 }
 
 @media only screen and (min-width: 721px) and (max-width: 1200px) {
-  
+  .container__menu {
+    display: flex;
+  }
+  .container__menu-icon {
+    transform: scale(2);
+    padding-left: 1.5rem;
+    padding-top: 1.5rem;
+  }
+  .container__navMenu-links a {
+    font-size: 3rem;
+  }
+
+  .container__navMenu-link img {
+    height: 50px;
+  }
 }
 </style>
