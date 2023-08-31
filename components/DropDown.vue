@@ -68,7 +68,7 @@ function toggleAnswer() {
   font-weight: 400;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 720px) {
   .faq-question {
   font-size: 1rem;
   font-weight: 600;

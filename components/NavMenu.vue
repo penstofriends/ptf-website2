@@ -10,17 +10,17 @@
     </div>
     <div class="container__navMenu-links">
       <div class="container__navMenu-link home-link">
-        <img src="home.png" alt="Home" />
+        <img src="/home.png" alt="Home" />
         <nuxt-link @click="closeMenu" to="/" draggable="false">Home</nuxt-link>
       </div>
       <div class="container__navMenu-link involved-link">
-        <img src="messenger.png" alt="Home" />
+        <img src="/messenger.png" alt="Home" />
         <nuxt-link @click="closeMenu" to="/GettingInvolved" draggable="false"
           >Get Involved</nuxt-link
         >
       </div>
       <div class="container__navMenu-link faq-link">
-        <img src="question.png" alt="Home" />
+        <img src="/question.png" alt="Home" />
         <nuxt-link @click="closeMenu" to="/FrequentQuestions" draggable="false"
           >FAQs</nuxt-link
         >
@@ -49,9 +49,17 @@ export default {
       if (checkbox.checked) {
         document.body.classList.add("body-no-scroll");
         navMenu.classList.add("container__navMenu-links-active");
+        setTimeout(() => {
+          navMenu.classList.add("container__navMenu-links-active-fadeIn");
+          navMenu.classList.remove("container__navMenu-links-active-fadeOut");
+        }, 10);
       } else {
         document.body.classList.remove("body-no-scroll");
-        navMenu.classList.remove("container__navMenu-links-active");
+        navMenu.classList.add("container__navMenu-links-active-fadeOut");
+        navMenu.classList.remove("container__navMenu-links-active-fadeIn");
+        setTimeout(() => {
+          navMenu.classList.remove("container__navMenu-links-active");
+        }, 250);
       }
     });
   },
@@ -70,8 +78,8 @@ export default {
 }
 
 .container__menu-icon {
-  padding-left: 0.5rem;
-  padding-top: 0.5rem;
+  padding-left: 0.8rem;
+  padding-top: 0.8rem;
   z-index: 5;
 }
 
@@ -80,11 +88,11 @@ export default {
   width: 100vw;
   height: 100vh;
   padding-top: 10vh;
-  padding-left: 1rem;
+  padding-left: 2rem;
 
   flex-direction: column;
 
-  background-color: #bcd1be;
+  background-color: #c8c8a9;
 }
 
 .container__navMenu-links a {
@@ -104,11 +112,21 @@ export default {
 }
 
 .container__navMenu-links-active {
-  opacity: 1;
+  opacity: 0;
   display: flex;
   position: fixed;
   top: 0;
   z-index: 3;
+}
+
+.container__navMenu-links-active-fadeIn {
+  transition: opacity 0.25s ease-in-out;
+  opacity: 1;
+}
+
+.container__navMenu-links-active-fadeOut {
+  transition: opacity 0.25s ease-in-out;
+  opacity: 0;
 }
 
 /* menu icon stuff */
@@ -130,7 +148,7 @@ export default {
   position: absolute;
   height: 4px;
   width: 100%;
-  background: black;
+  background: #a5a988;
   border-radius: 9px;
   opacity: 1;
   left: 0;
@@ -172,9 +190,27 @@ export default {
   left: 5px;
 }
 
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 1200px) {
   .container__menu {
     display: none;
+  }
+}
+
+@media only screen and (min-width: 721px) and (max-width: 1200px) {
+  .container__menu {
+    display: flex;
+  }
+  .container__menu-icon {
+    transform: scale(2);
+    padding-left: 1.5rem;
+    padding-top: 1.5rem;
+  }
+  .container__navMenu-links a {
+    font-size: 3rem;
+  }
+
+  .container__navMenu-link img {
+    height: 50px;
   }
 }
 </style>

@@ -183,7 +183,7 @@ button {
   flex-direction: column;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 720px) {
   section {
     text-align: center;
   }

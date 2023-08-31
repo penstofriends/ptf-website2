@@ -1,23 +1,22 @@
 {
-  "name": "ptf-website",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "nuxt-app",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bridgetf7/ptf-website.git"
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@types/node": "^18",
+    "nuxt": "^3.5.2"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bridgetf7/ptf-website/issues"
-  },
-  "homepage": "https://github.com/bridgetf7/ptf-website#readme",
   "dependencies": {
-    "vue-router": "^4.1.6"
+    "vue3-carousel": "^0.3.1"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }

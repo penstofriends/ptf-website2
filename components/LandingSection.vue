@@ -1,25 +1,37 @@
 <template>
   <section id="landing-section">
     <div class="landing-section__background">
-      <img src="/background-circle.svg" class="landing-section__background-circle" width="650" />
+      <img
+        src="/background-circle.svg"
+        class="landing-section__background-circle"
+        width="650"
+      />
       <div class="landing-section__background-rectangle"></div>
     </div>
-    <img src="/landing-page-logo.svg" class="landing-section__logo" width="650" />
+    <img
+      src="/landing-page-logo.svg"
+      class="landing-section__logo"
+      width="650"
+    />
 
     <div class="landing-section__headers">
       <h1 class="landing-section__title">pens to friends</h1>
-      <h1 class="landing-section__title landing-section__title--outline">pens to friends</h1>
+      <h1 class="landing-section__title landing-section__title--outline">
+        pens to friends
+      </h1>
     </div>
 
     <button class="landing-section__button" @click="getStarted">
       <span>Get Started</span>
-      <img src="/arrow.svg" alt="">
+      <img src="/arrow.svg" alt="" />
     </button>
 
     <div class="landing-section__bottom-left">
       <div class="landing-section__line"></div>
       <div class="landing-section__smiles">
-        <h2 class="landing-section__smiles-text">Spreading smiles, one letter at a time</h2>
+        <h2 class="landing-section__smiles-text">
+          Spreading smiles, one letter at a time
+        </h2>
         <img width="146" src="/paper-aeroplane.svg" />
       </div>
     </div>
@@ -28,9 +40,18 @@
 
 <script setup>
 function getStarted() {
-  const router = useRouter()
+  const router = useRouter();
   router.push({ path: "/GettingInvolved" });
 }
+onMounted(() => {
+  const bottomLeft = document.querySelector(".landing-section__bottom-left");
+  if (screen.width < 1200 && screen.width > 720) {
+    bottomLeft.classList.add("onLeft");
+    setTimeout(() => {
+      bottomLeft.classList.add("slideRight");
+    }, 1000);
+  }
+});
 </script>
 
 <style scoped>
@@ -58,7 +79,7 @@ function getStarted() {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #C8C8A9;
+  background-color: #c8c8a9;
   opacity: 40%;
   z-index: -1;
   border: 1rem solid white;
@@ -77,7 +98,7 @@ function getStarted() {
 }
 
 .landing-section__title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 8rem;
@@ -85,12 +106,12 @@ function getStarted() {
   display: flex;
   align-items: center;
   text-align: center;
-  color: #A5A988;
+  color: #a5a988;
   z-index: 2;
 }
 
 .landing-section__title--outline {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 8rem;
@@ -100,16 +121,16 @@ function getStarted() {
   text-align: center;
   color: transparent;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #A5A988;
+  -webkit-text-stroke-color: #a5a988;
 }
 
 .landing-section__button {
-  top: 530px;
+  top: 55vh;
   left: 6.75rem;
   cursor: pointer;
-  transition: all .2s;
+  transition: all 0.2s;
   background: transparent;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 600;
   letter-spacing: 0.05rem;
@@ -118,26 +139,26 @@ function getStarted() {
   display: flex;
   align-items: center;
   text-align: center;
-  color: #35312B;
-  border: 1px solid #A5A988;
+  color: #35312b;
+  border: 1px solid #a5a988;
   border-radius: 50%;
   padding: 1rem 2.5rem;
   height: 4rem;
-  box-shadow: 5px 5px 0 0 #A5A988;
+  box-shadow: 5px 5px 0 0 #a5a988;
   z-index: 4;
 }
 
 #landing-section__button-link {
   text-align: center;
-  color: #35312B;
+  color: #35312b;
   text-decoration: none;
   height: 4rem;
 }
 
-.landing-section__button>img {
+.landing-section__button > img {
   width: 2.125rem;
-  margin-left: .5rem;
-  transition: transform .3s ease-in-out;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease-in-out;
 }
 
 .landing-section__button:hover img {
@@ -161,7 +182,7 @@ function getStarted() {
   position: absolute;
   width: 27.125rem;
   height: 0px;
-  border: 5px solid #C8C8A9;
+  border: 5px solid #c8c8a9;
 }
 
 .landing-section__smiles {
@@ -171,18 +192,19 @@ function getStarted() {
 }
 
 .landing-section__smiles-text {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 4rem;
   line-height: 7.1875rem;
-  color: #35312B;
+  color: #35312b;
   width: 38.1875rem;
   height: 12.5rem;
 }
 
-@media only screen and (max-width: 480px) {
+/* mobile */
 
+@media only screen and (max-width: 720px) {
   .landing-section__background-circle {
     width: 85vw;
   }
@@ -206,11 +228,10 @@ function getStarted() {
   }
 
   .landing-section__line {
-    width: 70vw;
+    width: 80vw;
     height: 0px;
-    border: 2.5px solid #C8C8A9;
+    border: 2.5px solid #c8c8a9;
   }
-
 
   .landing-section__title,
   .landing-section__title--outline {
@@ -229,15 +250,17 @@ function getStarted() {
     height: 3.5rem;
     width: fit-content;
     font-size: 1.25rem;
-    box-shadow: 5px 5px 0 0 #A5A988;
+    box-shadow: 5px 5px 0 0 #a5a988;
     z-index: 4;
   }
 
   .landing-section__headers {
-    left: 0;  
+    left: 0;
     top: 10vh;
   }
 }
+
+/* more mobile but for shorter ones */
 
 @media only screen and (max-height: 730px) {
   .landing-section__title {
@@ -248,11 +271,71 @@ function getStarted() {
   .landing-section__smiles-text {
     font-size: 2rem;
     line-height: initial;
-    
+
     height: 20vh;
   }
   .landing-section__smiles img {
     height: 30vh;
+  }
+}
+
+@media only screen and (min-width: 721px) and (max-width: 1200px) {
+  #landing-section {
+    height: 100vh;
+  }
+  .landing-section__headers {
+    left: 50px;
+    top: 60px;
+    
+    margin-left: 5vw;
+  }
+  .landing-section__background-circle {
+    height: 40vh;
+  }
+  .landing-section__smiles-text {
+    font-size: 2rem;
+    line-height: 4rem;
+    width: 40vw;
+  }
+  .landing-section__line {
+    width: 50vw;
+  }
+  .landing-section__button {
+    top: 65vh;
+  }
+  .landing-section__title {
+    font-size: 7rem;
+    margin: 0;
+    text-align: initial;
+    line-height: normal;
+  }
+  .landing-section__logo {
+    height: 20vh;
+    opacity: .5;
+    right: -150px;
+  }
+
+  .onLeft {
+    transform: translateX(-100%);
+  }
+
+  .slideRight {
+    transform: translateX(0%);
+    animation: slideRight 1s;
+  }
+
+  .onRight {
+    transform: translateX(0%);
+  }
+
+  @keyframes slideRight {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
   }
 }
 </style>
