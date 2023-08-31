@@ -183,8 +183,6 @@ onMounted(() => {
   width: 27.125rem;
   height: 0px;
   border: 5px solid #c8c8a9;
-
-  top: 20%
 }
 
 .landing-section__smiles {
@@ -312,8 +310,9 @@ onMounted(() => {
     line-height: normal;
   }
   .landing-section__logo {
-    height: 50vh;
+    height: 20vh;
     opacity: .5;
+    right: -150px;
   }
 
   .onLeft {
