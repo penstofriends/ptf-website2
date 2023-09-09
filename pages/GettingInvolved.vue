@@ -138,7 +138,7 @@ button {
   font-size: 1rem;
   font-family: "Open Sans", sans-serif;
   display: flex;
-  width: 90vw;
+  width: 42.625rem;
   flex-direction: column;
   flex-shrink: 0;
   text-indent: 3rem;
@@ -259,6 +259,9 @@ button {
   }
   .container__gettingInvolved-physical {
     padding-bottom: 10%;
+  }
+  .text-description {
+    width: 90vw;
   }
 }
 </style>
