@@ -122,6 +122,7 @@ p {
     font-size: 1.75rem;
     line-height: normal;
     height: fit-content;
+    width: auto;
   }
 }  
 </style>

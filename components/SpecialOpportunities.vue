@@ -85,8 +85,6 @@ export default defineComponent({
   width: 90%;
   border-radius: 50px;
   background: #f0e7e3;
-  box-shadow:  20px 20px 60px #d3c7c1,
-             -20px -20px 60px #ffffff;
 }
 h3 {
   color: #35312b;

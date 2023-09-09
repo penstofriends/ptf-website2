@@ -311,8 +311,9 @@ onMounted(() => {
   }
   .landing-section__logo {
     height: 20vh;
+    width: auto;
     opacity: .5;
-    right: -150px;
+    overflow: hidden;
   }
 
   .onLeft {
