@@ -57,12 +57,7 @@
       <div class="container__gettingInvolved-physical">
         <h2 class="text-subheader">Handwritten/Physical Letters</h2>
         <p class="text-description">
-          [description about physical letters] Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Sed auctor odio in massa commodo commodo.
-          Integer euismod posuere ipsum eget sollicitudin. Ut commodo euismod
-          urna, a lacinia arcu maximus sit amet. Etiam et sapien sed odio
-          consequat consectetur at nec magna. Morbi pellentesque, mi nec finibus
-          dignissim, elit ante faucibus ante, in malesuada eros lectus ac purus.
+          Our handwritten messages give volunteers the opportunity to connect with others through physical, tangible letters. If you love scrapbooking, journaling, or the sweet simplicity of paper and pencil, this is the option for you! Artwork is welcomed as well. Make sure to keep your content appropriate, as each letter will be reviewed by a team member!
         </p>
       </div>
     </div>
